@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Challenge</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <% if flash.any? %>
+        <div id='errors' class="text-center">
+          <% flash.each do |type, messages| %>
+            <div class="alert alert-<%= type %>">
+              <%= messages.is_a?(Array) ? messages.join(', ') : messages %>
+            </div>
+          <% end %>
+        </div>      
+      <% end %>
+
+      <%= render 'shared/navbar' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+
+<ul class="list-group">
+  <% @links.each do |link| %>
+    <li class="list-group-item">
+      <%= link.url %>
+      <% link.tags.each do |tag| %>
+        <span class="badge badge-primary badge-pill"><%= tag.name %></span>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Add a link', new_link_path, class: 'btn btn-primary' %>
+

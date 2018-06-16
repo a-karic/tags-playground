@@ -1,0 +1,20 @@
+<h1>Add a new link</h1>
+<%= form_with model: @link do|f| %>
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, class: 'form-control', placeholder: 'http://www.example.com/' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :tag_list, 'Tags seperate with comma (,)' %>
+    <%= f.text_field :tag_list, class: 'form-control', placeholder: 'news, sport, etc..' %>
+  </div>
+  <div id="suggested-tags" class="d-none">
+    <h5>Suggested Tags</h5>
+  </div>
+  <div id="suggested-tags-from-page" class="d-none">
+    <h5>Suggested Tags from page</h5>
+  </div>
+  <%= f.submit 'Save', class: 'btn btn-large btn-default' %>
+
+<% end %>
