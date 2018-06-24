@@ -24,6 +24,10 @@ gem 'virtus'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'simplecov', require: false
   gem 'pry-rails'
   gem 'sqlite3'
 end
@@ -39,6 +43,7 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :production do
